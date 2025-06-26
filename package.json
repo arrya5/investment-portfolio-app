@@ -1,0 +1,28 @@
+{
+  "name": "investment-portfolio-app",
+  "version": "1.0.0",
+  "description": "A full-stack application for managing investment portfolios",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "investment",
+    "portfolio",
+    "finance",
+    "react",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "docx": "^9.4.1"
+  }
+}

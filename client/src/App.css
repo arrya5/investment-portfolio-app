@@ -1,0 +1,744 @@
+/* General Styles */
+:root {
+  --primary-color: #2e4057;
+  --secondary-color: #4da1a9;
+  --accent-color: #f7cf46;
+  --dark-color: #2c3e50;
+  --light-color: #f5f7fa;
+  --success-color: #4caf50;
+  --danger-color: #f44336;
+  --gray-color: #757575;
+  --light-gray: #e0e0e0;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s;
+}
+
+.navbar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.user-info {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Login Styles */
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.login-button, button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover, button[type="submit"]:hover {
+  background-color: var(--primary-color);
+}
+
+.cancel-btn {
+  background-color: var(--light-gray);
+  color: var(--dark-color);
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: var(--gray-color);
+  color: white;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Companies List Styles */
+.companies-container {
+  padding: 20px;
+}
+
+.filter-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px;
+  padding-left: 40px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: var(--gray-color);
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.company-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.company-card h3 {
+  margin: 0 0 10px 0;
+  color: var(--primary-color);
+}
+
+.company-card .symbol {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 5px 0;
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(77, 161, 169, 0.1);
+  border-radius: 4px;
+}
+
+.company-card .sector {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Company Detail Page */
+.company-detail {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header-content h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.header-content .symbol {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin: 0.25rem 0;
+}
+
+.header-content .sector {
+  color: var(--text-muted);
+  margin: 0.25rem 0;
+}
+
+.header-content .last-updated {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0 0;
+}
+
+.watchlist-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  margin-left: 1rem;
+}
+
+.watchlist-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.watchlist-button.in-watchlist {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.watchlist-button.in-watchlist:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.watchlist-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.detail-card {
+  background-color: var(--light-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detail-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.detail-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.data-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-item label {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  margin-bottom: 5px;
+}
+
+.data-item value {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard h1 {
+  margin-bottom: 10px;
+}
+
+.dashboard .last-updated {
+  color: var(--gray-color);
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+
+.dashboard-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-transaction-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.add-transaction-btn:hover {
+  background-color: var(--primary-color);
+}
+
+.holdings-grid, .watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.holding-card, .watchlist-card {
+  background-color: var(--light-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.holding-card:hover, .watchlist-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+}
+
+.holding-card h3, .watchlist-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.holding-card .symbol, .watchlist-card .symbol {
+  color: var(--secondary-color);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.holding-card .quantity, .holding-card .value {
+  margin: 5px 0;
+}
+
+.holding-card .value {
+  font-weight: 500;
+  color: var(--success-color);
+}
+
+.watchlist-card .price, .watchlist-card .pe {
+  margin: 5px 0;
+}
+
+.transactions-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+table th {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+table tr:hover {
+  background-color: var(--light-color);
+}
+
+table td.buy {
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+table td.sell {
+  color: var(--danger-color);
+  font-weight: 500;
+}
+
+/* Transaction Form */
+.transaction-form-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.transaction-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--hover-shadow);
+  width: 400px;
+  max-width: 90%;
+}
+
+.transaction-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Dividend History Table */
+.dividend-table {
+  overflow-x: auto;
+}
+
+.dividend-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dividend-table th, .dividend-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.dividend-table th {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+/* News Styles */
+.news-list {
+  display: grid;
+  gap: 15px;
+}
+
+.news-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.news-item:hover {
+  transform: translateY(-2px);
+}
+
+.news-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+}
+
+/* Loading and Error States */
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.loading {
+  color: var(--secondary-color);
+}
+
+.error {
+  color: var(--danger-color);
+}
+
+.error-message {
+  color: var(--danger-color);
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--gray-color);
+  padding: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .detail-grid, .holdings-grid, .watchlist-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .navbar-menu {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Register Styles */
+.register-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.register-form small {
+  color: var(--gray-color);
+  font-size: 0.8rem;
+}
+
+.register-button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: var(--primary-color);
+}
+
+.register-button:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--gray-color);
+}
+
+.login-link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.demo-banner {
+  background-color: #ff9800;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.demo-banner p {
+  margin: 0;
+} 
